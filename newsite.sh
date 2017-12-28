@@ -5,7 +5,8 @@ read -p "Database Name: " DBNAME
 read -p "Database Password: " DBPASS
 read -p "Database User: " DBUSER
 
-VHOSTFILE="/private/etc/apache2/extra/httpd-vhosts.conf"
+VHOSTFILE="/usr/local/etc/httpd/extra/httpd-vhosts.conf"
+HOSTSFILE="/etc/hosts"
 
 
 echo "<VirtualHost *:80>" >> $VHOSTFILE
@@ -15,8 +16,10 @@ echo "\tSetEnv DB_NAME \"${DBNAME}\"" >> $VHOSTFILE
 echo "\tSetEnv DB_PASSWORD \"${DBPASS}\"" >> $VHOSTFILE
 echo "\tSetEnv DB_USER \"${DBUSER}\"" >> $VHOSTFILE
 echo "\tVirtualDocumentRoot \"${SITEPATH}\"" >> $VHOSTFILE
-echo "\tServerName ${SITE}.dev" >> $VHOSTFILE
-echo "\tServerAlias ${SITE}.dev" >> $VHOSTFILE
+echo "\tServerName ${SITE}.local" >> $VHOSTFILE
+echo "\tServerAlias ${SITE}.local" >> $VHOSTFILE
 echo "</VirtualHost>" >> $VHOSTFILE
 
-apachectl restart
+echo "127.0.0.1\t${SITE}.local" >> $HOSTSFILE
+
+apachectl -k restart
