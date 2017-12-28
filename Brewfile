@@ -1,0 +1,18 @@
+tap 'caskroom/cask'
+
+brew 'git'
+brew 'npm'
+brew 'composer'
+
+cask 'phpstorm'
+cask 'alfred'
+cask 'iterm2'
+cask 'skype'
+cask 'sourcetree'
+cask 'flux'
+cask 'firefox'
+cask 'gimp'
+cask 'google-chrome'
+cask 'opera'
+cask 'sequel-pro'
+cask 'transmit'
