@@ -18,12 +18,12 @@ echo "\tSetEnv DB_NAME \"${DBNAME}\"" >> $VHOSTFILE
 echo "\tSetEnv DB_PASSWORD \"${DBPASS}\"" >> $VHOSTFILE
 echo "\tSetEnv DB_USER \"${DBUSER}\"" >> $VHOSTFILE
 echo "\tVirtualDocumentRoot \"${SITEPATH}\"" >> $VHOSTFILE
-echo "\tServerName ${SITE}.local" >> $VHOSTFILE
-echo "\tServerAlias ${SITE}.local" >> $VHOSTFILE
+echo "\tServerName ${SITE}.strawberrystage.co.uk" >> $VHOSTFILE
+echo "\tServerAlias ${SITE}.strawberrystage.co.uk" >> $VHOSTFILE
 echo "\tErrorLog \"$LOGPATH/${SITE}/error_log\"" >> $VHOSTFILE
 echo "\tCustomLog \"$LOGPATH/${SITE}/access_log\" common" >> $VHOSTFILE
 echo "</VirtualHost>" >> $VHOSTFILE
 
-echo "127.0.0.1\t${SITE}.local" >> $HOSTSFILE
+echo "127.0.0.1\t${SITE}.strawberrystage.co.uk" >> $HOSTSFILE
 
 apachectl -k restart
